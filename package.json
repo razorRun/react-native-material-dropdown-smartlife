@@ -1,0 +1,42 @@
+{
+  "name": "react-native-material-dropdown-smartlife",
+  "version": "1.0.0",
+  "license": "BSD-3-Clause",
+  "author": "rmilinda@gmail.com",
+  "description": "Material dropdown",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "material",
+    "dropdown",
+    "spinner",
+    "select",
+    "react-native-material-dropdown-smartlife"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/razorRun/react-native-material-dropdown-smartlife.git"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.0",
+    "eslint": "^4.5.0",
+    "eslint-plugin-react": "^7.0.0"
+  },
+  "scripts": {
+    "lint": "eslint src example/app.js"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.9",
+    "react-native-material-buttons": "^0.5.0",
+    "react-native-material-ripple": "^0.8.0",
+    "react-native-material-textfield-smartlife": "^1.0.0"
+  }
+}
