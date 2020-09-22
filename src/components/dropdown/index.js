@@ -191,6 +191,7 @@ export default class Dropdown extends PureComponent {
   componentWillReceiveProps({ value }) {
     if (value !== this.props.value) {
       this.setState({ value });
+      this.onSelect = this.onSelect.bind(this);
     }
   }
 
@@ -367,21 +368,21 @@ export default class Dropdown extends PureComponent {
 
   value() {
     let { value } = this.state;
-
+    console.log(value)
     return value;
   }
 
   selectedIndex() {
     let { value } = this.state;
     let { data, valueExtractor } = this.props;
-
+    console.log(value)
     return data
       .findIndex((item, index) => null != item && value === valueExtractor(item, index));
   }
 
   selectedItem() {
     let { data } = this.props;
-
+    console.log(data)
     return data[this.selectedIndex()];
   }
 
@@ -670,7 +671,7 @@ export default class Dropdown extends PureComponent {
     } = props;
 
     let { left, top, width, opacity, selected, modal } = this.state;
-
+    console.log("selected",selected)
     let itemCount = data.length;
     let visibleItemCount = this.visibleItemCount();
     let tailItemCount = this.tailItemCount();
