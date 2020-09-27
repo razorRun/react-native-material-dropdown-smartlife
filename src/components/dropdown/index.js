@@ -176,7 +176,6 @@ export default class Dropdown extends PureComponent {
     this.focus = this.onPress;
 
     let { value } = this.props;
-
     this.mounted = false;
     this.focused = false;
 
@@ -184,13 +183,14 @@ export default class Dropdown extends PureComponent {
       opacity: new Animated.Value(0),
       selected: -1,
       modal: false,
-      value,
+      value:value,
     };
   }
 
-  componentWillReceiveProps({ value }) {
+  UNSAFE_componentWillReceiveProps({ value }) {
     if (value !== this.props.value) {
       this.setState({ value });
+      this.render();
     }
   }
 
@@ -509,7 +509,7 @@ export default class Dropdown extends PureComponent {
         labelHeight={dropdownOffset.top - Platform.select({ ios: 1, android: 2 })}
 
         {...props}
-        allowFontScaling={false}
+
         value={title}
         editable={false}
         onChangeText={undefined}
@@ -678,7 +678,6 @@ export default class Dropdown extends PureComponent {
 
     let height = 2 * itemPadding + itemSize * visibleItemCount;
     let translateY = -itemPadding;
-
     if (null == dropdownPosition) {
       switch (selected) {
         case -1:
